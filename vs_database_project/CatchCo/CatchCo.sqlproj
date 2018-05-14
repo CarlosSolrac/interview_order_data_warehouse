@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>CatchCo</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{cc66d788-82d7-406b-840a-ee867e90655c}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>CatchCo</RootNamespace>
+    <AssemblyName>CatchCo</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables\" />
+    <Folder Include="Views\" />
+    <Folder Include="Functions\" />
+    <Folder Include="Stored Procedures\" />
+    <Folder Include="User Defined Types\" />
+    <Folder Include="Security\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\fact_orders.sql" />
+    <Build Include="Tables\staging_customers.sql" />
+    <Build Include="Tables\Tally.sql" />
+    <Build Include="Tables\tblExecSqlStatements_Results_TableType_V01.sql" />
+    <Build Include="Tables\staging_orders_text.sql" />
+    <Build Include="Tables\staging_customers_text.sql" />
+    <Build Include="Tables\staging_orders.sql" />
+    <Build Include="Tables\dim_customers.sql" />
+    <Build Include="Tables\dim_how_did_you_hear.sql" />
+    <Build Include="Tables\dim_how_did_you_hear_other.sql" />
+    <Build Include="Tables\dim_order_status.sql" />
+    <Build Include="Tables\dim_subscriptions.sql" />
+    <Build Include="Tables\dim_coupons.sql" />
+    <Build Include="Tables\dim_coupons_1.sql" />
+    <Build Include="Tables\dim_customers_1.sql" />
+    <Build Include="Tables\dim_how_did_you_hear_1.sql" />
+    <Build Include="Tables\dim_shipping.sql" />
+    <Build Include="Tables\dim_how_did_you_hear_other_1.sql" />
+    <Build Include="Tables\dim_order_status_1.sql" />
+    <Build Include="Tables\dim_shipping_1.sql" />
+    <Build Include="Tables\dim_subscriptions_1.sql" />
+    <Build Include="Views\fact_orders.sql" />
+    <Build Include="Views\answers_from_data_warehouse.sql" />
+    <Build Include="Views\customer_group_id.sql" />
+    <Build Include="Views\answers_from_staging.sql" />
+    <Build Include="Views\dim_customers.sql" />
+    <Build Include="Views\dim_subscriptions.sql" />
+    <Build Include="Views\dim_coupons.sql" />
+    <Build Include="Views\dim_how_did_you_hear.sql" />
+    <Build Include="Views\dim_how_did_you_hear_other.sql" />
+    <Build Include="Views\dim_shipping.sql" />
+    <Build Include="Views\dim_order_status.sql" />
+    <Build Include="Functions\fn_TableColumnList.sql" />
+    <Build Include="Functions\ufn_CreateForeignKeyName.sql" />
+    <Build Include="Functions\ufn_IsValuesIdentical.sql" />
+    <Build Include="Functions\fn_TableColumnList_WithAssignment.sql" />
+    <Build Include="Functions\ufn_IsTextIdentical.sql" />
+    <Build Include="Stored Procedures\usp_AutomaticallyCreateForeignKeyRelationships.sql" />
+    <Build Include="Stored Procedures\usp_CleanData.sql" />
+    <Build Include="Stored Procedures\usp_CreateMergeSprocs.sql" />
+    <Build Include="Stored Procedures\usp_CreateMergeSprocsForCsv.sql" />
+    <Build Include="Stored Procedures\usp_CreateTablesWithDefaultValues.sql" />
+    <Build Include="Stored Procedures\usp_DropAllForeignKeyConstraints.sql" />
+    <Build Include="Stored Procedures\usp_DropAllIndexes.sql" />
+    <Build Include="Stored Procedures\usp_DropFK_DropIdx_TruncateAll.sql" />
+    <Build Include="Stored Procedures\usp_ExecSqlStatements.sql" />
+    <Build Include="Stored Procedures\usp_Merge_Data.sql" />
+    <Build Include="Stored Procedures\usp_ShrinkDatabase.sql" />
+    <Build Include="Stored Procedures\usp_ShrinkLogOnly.sql" />
+    <Build Include="Stored Procedures\usp_SqlCodeToInsertDefaultValuesIntoTables.sql" />
+    <Build Include="Stored Procedures\usp_TruncateAll.sql" />
+    <Build Include="Stored Procedures\usp_MergeDefaultValues.sql" />
+    <Build Include="Stored Procedures\usp_MergeDefaultValuesIntoDimensions.sql" />
+    <Build Include="Stored Procedures\usp_Main.sql" />
+    <Build Include="User Defined Types\ExecSqlStatementsTableType.sql" />
+    <Build Include="Security\debug.sql" />
+    <Build Include="Security\default_values.sql" />
+    <Build Include="Security\source.sql" />
+  </ItemGroup>
+</Project>
