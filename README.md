@@ -43,3 +43,18 @@ VS Studio database project which include all the SQL source code.
 My apologies for the mixed capitalization across the code. Some code is new, some code is part of my personal toolkit.
 
 “We apologize for the inconvenience.” -God's Final Message to His Creation. The Hitchhiker's Guide to the Galaxy.  
+
+# Misc
+
+Email field length = 320
+From https://stackoverflow.com/questions/386294/what-is-the-maximum-length-of-a-valid-email-address
+
+Name length = 35 recommended. 128 provided. For extremely long customer names: “Was Prince but now Artist formerly known 
+as prince and has since changed his name again”
+
+For monies, I used decimal(28,6). I picked something extremely large in case there was a outlier in the CSV file. In 
+hindsight it was WAY too large.
+
+I ignored the column ‘customer_group_id’. I didn’t see an immediate pattern and I didn’t make time to run correlations 
+against the other fields. 
+
