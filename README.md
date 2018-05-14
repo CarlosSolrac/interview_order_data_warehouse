@@ -1,6 +1,5 @@
-"# interview_order_data_warehouse" 
-
 #NOTES
+
 The primary sproc that does all the work is call dbo.usp_Main. Inside the sproc is the following code block:
 ```
 /*
